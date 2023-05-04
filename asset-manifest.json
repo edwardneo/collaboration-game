@@ -1,13 +1,13 @@
 {
-  "main.css": "/maze-game/static/css/main.98242be4.chunk.css",
-  "main.js": "/maze-game/static/js/main.58693ded.chunk.js",
-  "main.js.map": "/maze-game/static/js/main.58693ded.chunk.js.map",
+  "main.css": "/maze-game/static/css/main.033807ee.chunk.css",
+  "main.js": "/maze-game/static/js/main.87b07bdb.chunk.js",
+  "main.js.map": "/maze-game/static/js/main.87b07bdb.chunk.js.map",
   "runtime~main.js": "/maze-game/static/js/runtime~main.619b41eb.js",
   "runtime~main.js.map": "/maze-game/static/js/runtime~main.619b41eb.js.map",
   "static/js/2.46532688.chunk.js": "/maze-game/static/js/2.46532688.chunk.js",
   "static/js/2.46532688.chunk.js.map": "/maze-game/static/js/2.46532688.chunk.js.map",
   "index.html": "/maze-game/index.html",
-  "precache-manifest.19e14dbd0b554a968414b3189eabd3e6.js": "/maze-game/precache-manifest.19e14dbd0b554a968414b3189eabd3e6.js",
+  "precache-manifest.580479c6b40b819d5c0c21eb56e22cc0.js": "/maze-game/precache-manifest.580479c6b40b819d5c0c21eb56e22cc0.js",
   "service-worker.js": "/maze-game/service-worker.js",
-  "static/css/main.98242be4.chunk.css.map": "/maze-game/static/css/main.98242be4.chunk.css.map"
+  "static/css/main.033807ee.chunk.css.map": "/maze-game/static/css/main.033807ee.chunk.css.map"
 }
