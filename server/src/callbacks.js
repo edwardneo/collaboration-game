@@ -6,6 +6,7 @@ import { EXITQUESTIONS } from '../../settings/ExitQuestions';
 import { FEEDBACK_QUESTIONS } from '../../settings/FeedbackQuestions';
 export const Empirica = new ClassicListenersCollector();
 
+let roundCounter = 0;
 const createMazeGameRoundParams = (roundName, setup, setupIndex=-1, intro=false) => {
   params = {
     name: roundName,
@@ -59,6 +60,19 @@ Empirica.onGameStart(({ game }) => {
   setups.forEach((setup, setupIndex) => {
     setup = setup.setup;
 
+    if (roundCounter % 2 === 0) {
+      let surveyRound = game.addRound({
+        name: `Survey After ${setup.name}`,
+        duration: 300,
+      });
+      surveyRound.addStage({
+        name: 'Maze Game Survey',
+        duration: 300,
+      });
+
+      console.log(`Added Maze Game Survey after ${roundName}`);
+    }
+
     for (let i = 0; i < Attempts; i++) {
       const roundName = `Setup ${setup.name} | Attempt ${i + 1}`;
       let round = game.addRound(createMazeGameRoundParams(roundName, setup, setupIndex, false));
@@ -67,17 +81,10 @@ Empirica.onGameStart(({ game }) => {
         name: 'Maze Game',
         duration: 60,
       });
-
-      // Add a survey stage after every two attempts, not including the intro round
-      if ((i + 1) % 2 === 0) {
-        round.addStage({
-          name: 'Maze Game Survey',
-          duration: 300, 
-        });
-      }
-
       console.log(`Created ${roundName}`);
     }
+
+    roundCounter++; // Increment round counter after each setup
   });
 
   console.log();

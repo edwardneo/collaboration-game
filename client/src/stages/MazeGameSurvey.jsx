@@ -3,7 +3,7 @@ import {
   usePlayer,
 } from '@empirica/core/player/classic/react'
 
-// import '../css/MazeGameSurvey.css'
+import '../css/MazeGameSurvey.css'
 import { Button } from '../components/Button'
 import { Questionaire } from '../components/Questionaire'
 import { HelpButton, HelpPopup } from '../components/HelpPopup'
