@@ -8,6 +8,7 @@ import React from 'react'
 
 import { MazeGame } from './stages/MazeGame'
 import { IntroEnd } from './stages/IntroEnd'
+import { MazeGameSurvey } from './stages/MazeGameSurvey';
 import { MazeGameEnd } from './stages/MazeGameEnd'
 
 import './css/Stage.css'
@@ -31,9 +32,11 @@ export function Stage() {
 
 	switch (stage.get('name')) {
 	case 'Maze Game':
-		return <MazeGame />
-	case 'Maze Game End':
-		return <MazeGameEnd />
+      return <MazeGame />;
+    case 'Maze Game Survey':
+      return <MazeGameSurvey />;
+    case 'Maze Game End':
+      return <MazeGameEnd />;  
   case 'Intro End':
     return <IntroEnd />
 	}
