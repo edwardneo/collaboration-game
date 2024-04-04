@@ -1,4 +1,4 @@
-const FEEDBACK_QUESTIONS = [
+export const FEEDBACK_QUESTIONS = [
     {
       question: 'Rate your agreement with the following statement: The rules of this game were easy to understand.',
       tag: 'game_rules_understanding',

@@ -61,10 +61,10 @@ Empirica.onGameStart(({ game }) => {
     setup = setup.setup;
 
     if (roundCounter % 2 === 0) {
-      let surveyRound = game.addRound({
-        name: `Survey After ${setup.name}`,
-        duration: 300,
-      });
+      // let surveyRound = game.addRound({
+      //   name: `Survey After ${setup.name}`,
+      //   duration: 300,
+      // });
       surveyRound.addStage({
         name: 'Maze Game Survey',
         duration: 300,
@@ -107,6 +107,7 @@ Empirica.onRoundStart(({ round }) => {
   });
 });
 
+
 Empirica.onStageStart(({ stage }) => {
   const stageName = stage.get('name')
   if (stage.get('name') === 'Maze Game') {
@@ -131,8 +132,13 @@ Empirica.onStageStart(({ stage }) => {
     })
   } else if (stage.name === 'Maze Game Survey') {
     stage.players.forEach(player => {
-      player.set('survey complete', false);
-    });
+      player.set('questionaire', FEEDBACK_QUESTIONS.reduce((obj, question) => ({...obj, [question.tag]: null}), {}))
+      player.set('submit check', false)
+      player.set('check complete', false)
+      if (player.stage !== undefined) { // For weird Heisenbug player.stage not being defined
+        player.stage.set('help', false)
+      }
+    })
   }
 });
 
