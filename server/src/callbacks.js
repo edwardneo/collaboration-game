@@ -60,18 +60,18 @@ Empirica.onGameStart(({ game }) => {
   setups.forEach((setup, setupIndex) => {
     setup = setup.setup;
 
-    if (roundCounter % 2 === 0) {
-      // let surveyRound = game.addRound({
-      //   name: `Survey After ${setup.name}`,
-      //   duration: 300,
-      // });
-      surveyRound.addStage({
-        name: 'Maze Game Survey',
-        duration: 300,
-      });
+    // if (roundCounter % 2 === 0) {
+    //   let surveyRound = game.addRound({
+    //     name: `Survey After ${setup.name}`,
+    //     duration: 300,
+    //   });
+    //   surveyRound.addStage({
+    //     name: 'Maze Game Survey',
+    //     duration: 300,
+    //   });
 
-      console.log(`Added Maze Game Survey after ${roundName}`);
-    }
+    //   console.log(`Added Maze Game Survey after ${roundName}`);
+    // }
 
     for (let i = 0; i < Attempts; i++) {
       const roundName = `Setup ${setup.name} | Attempt ${i + 1}`;
@@ -180,6 +180,7 @@ Empirica.onStageEnded(({ stage }) => {
           scores.push(player.round.get('score'));
           player.game.set('scores', scores);
         })
+        // if stage.round.get
         stage.round.addStage({ //add a new stage
           name: `Maze Game End`,
           duration: 60,
