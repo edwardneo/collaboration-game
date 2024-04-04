@@ -7,7 +7,7 @@ import { FEEDBACK_QUESTIONS } from '../../settings/FeedbackQuestions';
 export const Empirica = new ClassicListenersCollector();
 
 let roundCounter = 0;
-const createMazeGameRoundParams = (roundName, setup, setupIndex=-1, intro=false) => {
+const createMazeGameRoundParams = (roundName, setup, setupIndex=-1, intro=false, lastAttempt=false) => {
   params = {
     name: roundName,
     setup: setup,
@@ -23,6 +23,7 @@ const createMazeGameRoundParams = (roundName, setup, setupIndex=-1, intro=false)
         currMax),
       -1) + 1,
     intro: intro,
+    lastAttempt: lastAttempt,
   }
   return params
 }
@@ -75,7 +76,7 @@ Empirica.onGameStart(({ game }) => {
 
     for (let i = 0; i < Attempts; i++) {
       const roundName = `Setup ${setup.name} | Attempt ${i + 1}`;
-      let round = game.addRound(createMazeGameRoundParams(roundName, setup, setupIndex, false));
+      let round = game.addRound(createMazeGameRoundParams(roundName, setup, setupIndex, false, i == Attempts - 1));
   
       round.addStage({
         name: 'Maze Game',
@@ -180,11 +181,17 @@ Empirica.onStageEnded(({ stage }) => {
           scores.push(player.round.get('score'));
           player.game.set('scores', scores);
         })
-        // if stage.round.get
-        stage.round.addStage({ //add a new stage
-          name: `Maze Game End`,
-          duration: 60,
-        });
+        if (stage.round.get('lastAttempt')) {
+          stage.round.addStage({
+            name: `Maze Game Survey`,
+            duration: 300,
+          })
+        } else {
+          stage.round.addStage({
+            name: `Maze Game End`,
+            duration: 60,
+          });
+        }
       }
       console.log('Goals fulfilled')
     } else {

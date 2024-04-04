@@ -33,10 +33,10 @@ export function Stage() {
 	switch (stage.get('name')) {
 	case 'Maze Game':
       return <MazeGame />;
-    case 'Maze Game Survey':
-      return <MazeGameSurvey />;
-    case 'Maze Game End':
-      return <MazeGameEnd />;  
+  case 'Maze Game End':
+    return <MazeGameEnd />;
+  case 'Maze Game Survey':
+    return <MazeGameSurvey />;
   case 'Intro End':
     return <IntroEnd />
 	}
