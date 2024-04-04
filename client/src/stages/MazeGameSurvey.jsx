@@ -5,7 +5,7 @@ import {
 
 import '../css/MazeGameSurvey.css'
 import { Button } from '../components/Button'
-import { Questionaire } from '../components/Questionaire'
+import { MidgameQuestionaire } from '../components/MidgameQuestionaire'
 import { HelpButton, HelpPopup } from '../components/HelpPopup'
 
 export function MazeGameSurvey() {
@@ -19,7 +19,7 @@ export function MazeGameSurvey() {
         {'Congratulation! Please complete the following survey to continue the maze game.'}
       </p>
       <br />
-      <Questionaire surveyComplete={surveyComplete} />
+      <MidgameQuestionaire surveyComplete={surveyComplete} />
       {
         surveyComplete ? 
         <>

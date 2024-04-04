@@ -1,16 +1,31 @@
+.question-container {
+  margin-bottom: 20px; 
+}
+
+.question-title {
+  display: block; /* or 'inline-block', ensure it's not 'absolute' */
+  margin-bottom: 5px; /* Give some space between the title and the input field */
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Adjust if necessary */
+  margin-top: 0; /* Remove any top margin that might push it upwards */
+  box-sizing: border-box; /* Make sure paddings and borders are included in width */
+}
+
+.radio-button-container, .checkbox-container {
+  display: block; /* Ensure each option is on a new line */
+  margin-top: 10px; /* Adjust space between options */
+}
+
 .maze-game-survey {
-    padding: 30px 40px;
-    border: 1px solid black;
-    border-radius: 10px;
-    position: absolute;
-    width: 50%;
-  }
-  
-  .survey-complete-label {
-    margin: 10px 0px;
-  }
-  
-  .maze-game-survey-btn {
-    align-self: center;
-  }
-  
+  padding-bottom: 50px; /* Adjust as necessary to prevent cut-off */
+}
+
+.maze-game-survey {
+  min-height: 500px; /* Adjust based on your content */
+  overflow-y: auto; /* Allows scrolling if content is larger than the container */
+  padding-top: 500px; /* Increase the top padding inside the container */
+  margin-top: 500px;
+}

@@ -204,4 +204,4 @@ export const TwoPlayerTestSetups = [
   },
 ];
 
-export const Attempts = 2;
+export const Attempts = 1;
