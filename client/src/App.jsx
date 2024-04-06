@@ -6,6 +6,7 @@ import { Game } from './Game'
 import { PlayerCreate } from './intro-exit/PlayerCreate' 
 import { Introduction } from './intro-exit/Introduction'
 import { ExitSurvey } from './intro-exit/ExitSurvey'
+import { MidgameSurvey } from './intro-exit/MidSurvey'
 import { Finished } from './intro-exit/Finished'
 
 export default function App() {
@@ -19,6 +20,10 @@ export default function App() {
 		return [Introduction]
 	}
 
+	function midSteps() { // { game, player } passed in
+		return [MidgameSurvey]
+	}
+
 	function exitSteps() { // { game, player } passed in
 		return [ExitSurvey]
 	}
@@ -28,7 +33,7 @@ export default function App() {
 			<div className="h-screen relative">
 				<EmpiricaMenu position="bottom-left" />
 				<div className="h-full overflow-auto">
-					<EmpiricaContext playerCreate={PlayerCreate} introSteps={introSteps} exitSteps={exitSteps} finished={Finished}>
+					<EmpiricaContext playerCreate={PlayerCreate} introSteps={introSteps} midSteps={MidgameSurvey} exitSteps={exitSteps} finished={Finished}>
 						<Game />
 					</EmpiricaContext>
 				</div>
