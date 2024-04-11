@@ -11,7 +11,7 @@ import { HelpButton, HelpPopup } from '../components/HelpPopup'
 export function MazeGameSurvey() {
   const player = usePlayer()
 
-  const surveyComplete = player.get('survey complete')
+  const checkComplete = player.get('check complete')
   
   return (
     <div className='game maze-game-survey'>
@@ -19,13 +19,13 @@ export function MazeGameSurvey() {
         {'Congratulation! Please complete the following survey to continue the maze game.'}
       </p>
       <br />
-      <MidgameQuestionaire surveyComplete={surveyComplete} />
+      <MidgameQuestionaire checkComplete={checkComplete} />
       {
-        surveyComplete ? 
+        checkComplete ? 
         <>
           <p className='start-label'>{'Thank you for completing the survey! You may now proceed.'}</p>
           <Button className='maze-game-survey-btn' primary handleClick={() => player.stage.set('submit', true)}>
-            <p>Finish</p>
+            <p>Submit</p>
           </Button>
         </> :
         null

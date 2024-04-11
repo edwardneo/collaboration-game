@@ -24,8 +24,8 @@ textarea {
 }
 
 .maze-game-survey {
-  min-height: 500px; /* Adjust based on your content */
+  min-height: 50px; /* Adjust based on your content */
   overflow-y: auto; /* Allows scrolling if content is larger than the container */
-  padding-top: 500px; /* Increase the top padding inside the container */
-  margin-top: 500px;
+  padding-top: 50px; /* Increase the top padding inside the container */
+  margin-top: 50px;
 }
