@@ -184,7 +184,7 @@ Empirica.onStageEnded(({ stage }) => {
         if (stage.round.get('lastAttempt')) {
           stage.round.addStage({
             name: `Maze Game Survey`,
-            duration: 300,
+            duration: 3000,
           })
         } else {
           stage.round.addStage({

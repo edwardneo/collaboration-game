@@ -3,7 +3,7 @@ import { usePlayer } from '@empirica/core/player/classic/react';
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
 import { FEEDBACK_QUESTIONS } from '../../../settings/FeedbackQuestions';
-import '../css/Questionaire.css';
+// import '../css/Questionaire.css';
 import '../css/MazeGameSurvey.css';
 
 export function MidSurvey({ next }) {
@@ -50,7 +50,7 @@ export function MidSurvey({ next }) {
     );
 
     if (surveyComplete) {
-      player.set('midgameSurvey', feedback);
+      player.set(`midgameSurvey-${player.id}`, feedback);
       next();
     } else {
       topRef.current.scrollIntoView({ behavior: "smooth" });
