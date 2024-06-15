@@ -217,7 +217,17 @@ export const EXITQUESTIONS = [
           'Higher Priority for Individual Goals: Focuses on personal achievements, which could lead to a higher individual score but may compromise the team\'s efficiency and overall success.'
         ],
         direction: 'column'
-      }
+      },
+      {
+        question: 'What challenges do you expect to arise when working with an Explorer type partner?',
+        tag: 'challenges-approach',
+        type: 'fr'
+      },
+      {
+        question: 'What challenges do you expect to arise when working with a Conservative type partner?',
+        tag: 'challenges-approach',
+        type: 'fr'
+      },
     ],
   },
   {
